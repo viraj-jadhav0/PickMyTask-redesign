@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance - PickMyTask</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    <style>
+        :root {
+            --primary: #029791;
+            --primary-light: #029791;
+            --primary-dark: #029791;
+            --accent: #34A853;
+            --secondary: #0a1525;
+            --background: #FFFFFF;
+            --foreground: #202124;
+            --secondary-bg: #F8F9FA;
+            --muted: #5F6368;
+            --border: #DADCE0;
+            --card-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--foreground);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon svg {
+            filter: drop-shadow(0 2px 4px rgba(10, 21, 37, 0.15));
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(10, 21, 37, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #1a2942;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(10, 21, 37, 0.4);
+        }
+
+        /* Coming Soon Page Styles */
+        .coming-soon-section {
+            padding: 12rem 0;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
+        }
+
+        .coming-soon-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #029791, #34A853);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coming-soon-icon svg {
+            width: 60px;
+            height: 60px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #029791, #029725);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .coming-soon-description {
+            color: var(--muted);
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-specific-content {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .insurance-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background-color: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+            text-align: left;
+            transition: transform 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .insurance-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .insurance-icon {
+            background-color: rgba(2, 151, 145, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .insurance-icon svg {
+            width: 30px;
+            height: 30px;
+            color: var(--primary);
+        }
+
+        .insurance-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--foreground);
+        }
+
+        .insurance-content p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .waiting-list-button {
+            background: linear-gradient(135deg, #029791, #029725);
+            color: white;
+            padding: 0.85rem 1.8rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(10, 21, 37, 0.3);
+        }
+        
+        .waiting-list-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(10, 21, 37, 0.4);
+        }
+
+        footer {
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .copyright {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#4285F4"/>
+                        </svg>
+                    </div>
+                    PickMyTask
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="help-center.html">Help Center</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="cta-button">Join Waiting List</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="coming-soon-content">
+                <div class="coming-soon-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h1>Insurance & <span class="gradient-text">Protection</span></h1>
+                <p class="coming-soon-description">Our insurance and protection options are being finalized to provide peace of mind for all PickMyTask users.</p>
+                
+                <div class="page-specific-content">
+                    <h3>Comprehensive Protection for Our Community</h3>
+                    <p>At PickMyTask, your safety and security are our top priorities. We're working with leading insurance providers to offer robust protection for both task providers and task performers.</p>
+                    
+                    <div style="margin-top: 2rem">
+                        <h4 style="margin-bottom: 1.5rem; text-align: left;">Insurance Options Coming Soon:</h4>
+                        
+                        <div class="insurance-card">
+                            <div class="insurance-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                            </div>
+                            <div class="insurance-content">
+                                <h3>Property Protection</h3>
+                                <p>Coverage for damage to property that may occur during task completion, ensuring both parties are protected against unexpected incidents.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insurance-card">
+                            <div class="insurance-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                            <div class="insurance-content">
+                                <h3>Liability Coverage</h3>
+                                <p>Protection against liability claims related to tasks performed through our platform, giving you confidence in every transaction.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insurance-card">
+                            <div class="insurance-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div class="insurance-content">
+                                <h3>Accident Protection</h3>
+                                <p>Coverage for personal injuries that may occur during task performance, supporting our commitment to a safe working environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem">Full details on our insurance options, coverage limits, and how to make claims will be available when PickMyTask launches in your area.</p>
+                </div>
+                
+                <a href="index.html" class="waiting-list-button">
+                    <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
+                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span>Return to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>© 2024 PickMyTask. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
