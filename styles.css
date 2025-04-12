@@ -45,6 +45,12 @@ header {
     padding: 0 2rem;
 }
 
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -59,6 +65,12 @@ nav {
     font-size: 1.25rem;
     color: var(--foreground);
     text-decoration: none;
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.1rem;
+    }
 }
 
 .logo-icon {
@@ -860,7 +872,7 @@ footer {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: block;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     color: rgba(255, 255, 255, 0.6);
@@ -1168,6 +1180,7 @@ footer {
     color: var(--foreground);
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 101;
 }
 
 .mobile-menu-open .nav-links {
@@ -1183,36 +1196,32 @@ footer {
     gap: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 99;
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .download-wrapper {
-        flex-direction: column;
-        padding: 2rem;
-    }
-    
-    .key-features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .investor-content,
-    .contact-info {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        width: 100%;
+    }
+    
+    .nav-links a {
+        padding: 0.7rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .nav-links a:last-child {
+        border-bottom: none;
     }
     
     .mobile-menu-toggle {
         display: block;
+    }
+    
+    .mobile-menu-open .nav-links {
+        display: flex;
     }
     
     .hero-content {
@@ -1260,11 +1269,33 @@ footer {
         flex-direction: column;
         gap: 1rem;
         text-align: left;
+        align-items: flex-start;
     }
     
     .benefits-container {
         flex-direction: column;
         gap: 2rem;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .download-wrapper {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    
+    .key-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .investor-content,
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
