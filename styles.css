@@ -121,7 +121,7 @@ nav {
 .hero {
     padding-top: 7rem;
     padding-bottom: 5rem;
-    background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.08), rgba(52, 168, 83, 0.08));
 }
 
 .hero-content {
@@ -547,6 +547,10 @@ section:nth-child(even) {
     background-color: var(--secondary-bg);
 }
 
+#features {
+    background-color: #f5f7fa;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 3.5rem;
@@ -675,7 +679,7 @@ h3 {
 
 /* How it Works */
 .how-it-works {
-    background: linear-gradient(135deg, rgba(66, 133, 244, 0.03), rgba(52, 168, 83, 0.03));
+    background: linear-gradient(135deg, rgba(10, 21, 37, 0.04), rgba(255, 255, 255, 0.8));
 }
 
 .steps {
@@ -719,7 +723,7 @@ h3 {
 /* Download Section */
 .download-section {
     padding: 7rem 0;
-    background: linear-gradient(135deg, rgba(66, 133, 244, 0.08), rgba(10, 21, 37, 0.08));
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(10, 21, 37, 0.1));
 }
 
 .download-wrapper {
@@ -892,8 +896,8 @@ footer {
 
 /* Key Features */
 .key-features {
+    background: linear-gradient(135deg, rgba(2, 151, 145, 0.05), rgba(255, 255, 255, 0.8));
     padding: 5rem 0;
-    background: linear-gradient(135deg, rgba(66, 133, 244, 0.03), rgba(52, 168, 83, 0.03));
 }
 
 .key-features-grid {
@@ -1012,7 +1016,7 @@ footer {
 
 /* Investor Section */
 .investor-section {
-    background: linear-gradient(135deg, rgba(10, 21, 37, 0.03), rgba(66, 133, 244, 0.03));
+    background: linear-gradient(135deg, rgba(2, 151, 145, 0.05), rgba(52, 168, 83, 0.05));
     padding: 5rem 0;
 }
 
@@ -1084,6 +1088,7 @@ footer {
 /* Contact Section */
 .contact-section {
     padding: 5rem 0;
+    background-color: #f8f9fa;
 }
 
 .contact-info {
