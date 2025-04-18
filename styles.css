@@ -231,7 +231,7 @@ header {
         display: block !important;
         margin-left: auto;
         margin-right: 15px;
-        background: linear-gradient(135deg, rgba(2, 151, 141, 0.1), rgba(52, 168, 83, 0.1));
+        /* background: linear-gradient(135deg, rgba(2, 151, 141, 0.1), rgba(52, 168, 83, 0.1)); */
         padding: 8px;
         border-radius: 8px;
     }
@@ -1717,10 +1717,10 @@ footer {
 /* Mobile Menu - Base Styles */
 .mobile-menu-toggle {
     display: none;
-    background-color: rgba(2, 151, 141, 0.08);
+    background-color: white;
     border: none;
     border-radius: 8px;
-    padding: 10px;
+    padding: 0px;
     cursor: pointer;
     margin-left: auto;
     margin-right: 15px;
