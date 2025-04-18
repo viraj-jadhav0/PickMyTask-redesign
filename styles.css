@@ -228,19 +228,17 @@ header {
     }
     
     .mobile-menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, rgba(2, 151, 141, 0.1), rgba(52, 168, 83, 0.1));
-        padding: 0.65rem;
-        border-radius: 10px;
+        display: block !important;
         margin-left: auto;
-        margin-right: 0.5rem;
+        margin-right: 15px;
+        background: linear-gradient(135deg, rgba(2, 151, 141, 0.1), rgba(52, 168, 83, 0.1));
+        padding: 8px;
+        border-radius: 8px;
     }
     
     .mobile-menu-toggle svg {
-        width: 22px;
-        height: 22px;
+        width: 24px;
+        height: 24px;
     }
     
     .waiting-list-button {
@@ -1716,77 +1714,74 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Mobile Menu */
+/* Mobile Menu - Base Styles */
 .mobile-menu-toggle {
     display: none;
-    background: linear-gradient(135deg, rgba(2, 151, 141, 0.1), rgba(52, 168, 83, 0.1));
-    border-radius: 12px;
-    padding: 0.8rem;
-    margin-left: auto;
-    margin-right: 1rem;
-    z-index: 1001;
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: rgba(2, 151, 141, 0.08);
     border: none;
+    border-radius: 8px;
+    padding: 10px;
     cursor: pointer;
-    position: relative;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-left: auto;
+    margin-right: 15px;
+    z-index: 999;
 }
 
 .mobile-menu-toggle svg {
     width: 24px;
     height: 24px;
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    color: var(--primary-color);
 }
 
-.mobile-menu-toggle:hover {
-    background: linear-gradient(135deg, rgba(2, 151, 141, 0.15), rgba(52, 168, 83, 0.15));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.mobile-menu-open .mobile-menu-toggle {
-    background: linear-gradient(135deg, rgba(2, 151, 141, 0.2), rgba(52, 168, 83, 0.2));
-    box-shadow: 0 4px 12px rgba(2, 151, 141, 0.15);
-}
-
-.mobile-menu-open .mobile-menu-toggle svg {
-    transform: rotate(90deg);
-}
-
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    nav {
-        display: flex;
-        align-items: center;
-        padding: 0 0.2rem;
-    }
-    
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-    }
-    
+    /* Show the menu toggle button on mobile */
     .mobile-menu-toggle {
-        background: linear-gradient(135deg, rgba(2, 151, 141, 0.1), rgba(52, 168, 83, 0.1));
-        padding: 0.65rem;
-        border-radius: 10px;
-        margin-left: auto;
-        margin-right: 0.5rem;
+        display: block;
     }
     
-    .mobile-menu-toggle svg {
-        width: 22px;
-        height: 22px;
+    /* Hide the desktop waiting list button */
+    nav .waiting-list-button {
+        display: none;
     }
     
-    .waiting-list-button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+    /* Mobile navigation styling */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 0;
+        transform: translateY(-120%);
+        visibility: hidden;
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+        z-index: 998;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
     
-    .waiting-list-button svg {
-        width: 18px;
-        height: 18px;
+    /* When menu is open */
+    header.mobile-menu-open .nav-links {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    /* Menu items in mobile view */
+    .nav-links a {
+        padding: 15px 20px;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        text-align: left;
+    }
+    
+    .nav-links a:last-child {
+        border-bottom: none;
     }
 }
 
