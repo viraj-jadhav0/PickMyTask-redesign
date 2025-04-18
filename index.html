@@ -605,10 +605,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const header = document.querySelector('header');
+            const navLinks = document.getElementById('nav-links');
             
+            // Mobile menu toggle
             if (mobileMenuToggle) {
                 mobileMenuToggle.addEventListener('click', function() {
                     header.classList.toggle('mobile-menu-open');
+                    document.body.classList.toggle('menu-open');
+                });
+                
+                // Close menu when nav links are clicked
+                const menuLinks = navLinks.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        header.classList.remove('mobile-menu-open');
+                        document.body.classList.remove('menu-open');
+                    });
                 });
             }
 
