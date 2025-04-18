@@ -296,9 +296,12 @@ h1::after {
 .app-users {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 0.95rem;
     color: var(--gray-color);
     font-weight: 500;
+    text-align: center;
+    width: 100%;
 }
 
 .user-count {
@@ -1470,451 +1473,17 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: white;
-        flex-direction: column;
-        padding: 5rem 2rem 2rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transform: translateY(-100%);
-        transition: var(--transition);
-        z-index: 999;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    
-    .mobile-menu-toggle {
-        display: block;
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-    
-    h1::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-        margin-bottom: 1rem;
-    }
-    
-    .section-header h2 {
-        line-height: 1.3;
-    }
-    
-    .section-tag {
-        margin-bottom: 0.75rem;
-    }
-    
-    .section-description {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .feature-card {
-        text-align: center;
-    }
-    
-    .download-buttons {
-        justify-content: center;
-    }
-    
-    .waiting-list-button {
-        margin: 0 auto;
-    }
-    
-    .nav-links .mobile-waitlist-button {
-        display: inline-flex;
-        margin-top: 1.5rem;
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .copyright {
-        margin-top: 1rem;
-    }
-    
-    .benefits-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 576px) {
-    .nav-links {
-        top: 0;
-        padding: 5rem 1.5rem 2rem;
-    }
-    
-    header .waiting-list-button {
-        display: none;
-    }
-    
-    .mobile-menu-toggle {
-        margin-left: auto;
-    }
-    
-    h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.6rem;
-        line-height: 1.3;
-        letter-spacing: -0.01em;
-        margin-bottom: 1rem;
-    }
-    
-    h3 {
-        font-size: 1.2rem;
-        line-height: 1.3;
-        margin-bottom: 0.5rem;
-    }
-    
-    .how-it-works .section-header,
-    .key-features .section-header,
-    #features .section-header {
-        margin-bottom: 2rem;
-    }
-    
-    .section-header {
-        margin-bottom: 2rem; 
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .how-it-works-steps {
-        flex-direction: column;
-    }
-    
-    .benefit-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .key-features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .investor-content,
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-links-group {
-        margin-bottom: 1.5rem;
-    }
-}
-
-/* Animation effects */
-.feature-card, .key-feature, .step-card, .contact-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.feature-card:nth-child(2), .key-feature:nth-child(2), .step-card:nth-child(2) {
-    transition-delay: 0.1s;
-}
-
-.feature-card:nth-child(3), .key-feature:nth-child(3), .step-card:nth-child(3) {
-    transition-delay: 0.2s;
-}
-
-.feature-card:nth-child(4), .key-feature:nth-child(4) {
-    transition-delay: 0.3s;
-}
-
-/* Enhanced navigation */
-.nav-links a:not(.cta-button)::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    transition: width 0.3s ease;
-}
-
-.nav-links a:not(.cta-button):hover::after {
-    width: 100%;
-}
-
-/* Improved mobile menu */
-.mobile-menu-open .nav-links {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* App navigation styling */
-.app-nav-bar {
-    display: flex;
-    justify-content: space-around;
-    background: white;
-    border-top: 1px solid #eee;
-    border-radius: 20px 20px 0 0;
-    padding: 0.75rem 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.app-nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: var(--gray-color);
-    font-size: 0.8rem;
-    transition: var(--transition);
-    padding: 0.5rem;
-}
-
-.app-nav-item.active {
-    color: var(--primary-color);
-}
-
-.app-nav-item svg {
-    margin-bottom: 0.3rem;
-    width: 22px;
-    height: 22px;
-}
-
-/* Add body styles when menu is open */
-body.menu-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
-
-/* Footer responsive improvements */
-@media (max-width: 576px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .footer-brand {
-        text-align: left;
-    }
-    
-    .footer-links-group {
-        margin-bottom: 1.5rem;
-        text-align: left;
-    }
-    
-    .footer-links {
-        align-items: flex-start;
-    }
-    
-    .social-links {
-        justify-content: flex-start;
-    }
-    
-    .copyright {
-        text-align: left;
-    }
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    h1 {
-        font-size: 2.8rem;
-        line-height: 1.2;
-    }
-    
-    h2 {
-        font-size: 2rem;
-        line-height: 1.3;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-    
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-    
-    .download-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .download-content {
-        max-width: 100%;
-    }
-    
-    .key-features-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .investor-content,
-    .contact-info {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 576px) {
-    .benefits-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .section-header {
-        margin-bottom: 2.5rem;
-        max-width: 90%;
-    }
-    
-    .section-header::after {
-        width: 80px;
-        height: 3px;
-        margin: 1.2rem auto;
-    }
-    
-    .section-tag {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.9rem;
-        margin-bottom: 0.75rem;
-    }
-    
-    .section-description {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-}
-
-@media (max-width: 576px) {
-    .section-header {
-        margin-bottom: 2rem;
-        max-width: 100%;
-    }
-    
-    .section-header::after {
-        width: 60px;
-        height: 3px;
-        margin: 1rem auto;
-    }
-}
-
-/* Mobile and Tablet Responsiveness Improvements */
-
-/* Base responsive improvements */
-@media (max-width: 992px) {
-    h1 {
-        font-size: 2.8rem;
-        line-height: 1.2;
-    }
-    
-    h2 {
-        font-size: 2rem;
-        line-height: 1.3;
-    }
-    
-    .section-header {
-        max-width: 90%;
-        margin-bottom: 3rem;
-    }
-    
-    .hero-content {
-        gap: 1.5rem;
-    }
-    
-    .hero-text {
-        max-width: 100%;
-    }
-    
-    .phone-mockup {
-        width: 250px;
-        height: 520px;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-    
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-    
-    .download-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 2.5rem;
-    }
-    
-    .download-content {
-        max-width: 100%;
-    }
-    
-    .key-features-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .investor-content,
-    .contact-info {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-    
-    .steps {
-        gap: 1.5rem;
-    }
-}
-
-/* Mobile specific improvements */
-@media (max-width: 768px) {
     body {
-        font-size: 15px;
+        font-size: 16px;
     }
     
     .container {
-        width: 90%;
+        width: 100%;
+        padding: 0 1.5rem;
     }
     
-    header {
-        padding: 0.8rem 0;
+    .section-header {
+        max-width: 100%;
     }
     
     .nav-links {
@@ -1984,7 +1553,7 @@ body.menu-open {
     
     .section-header {
         margin-bottom: 2.5rem;
-        max-width: 90%;
+        max-width: 100%;
     }
     
     .section-header::after {
@@ -2000,44 +1569,12 @@ body.menu-open {
     }
     
     .section-description {
-        font-size: 1rem;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.6;
     }
     
     section {
         padding: 4rem 0;
-    }
-    
-    .how-it-works {
-        padding: 4rem 0;
-    }
-    
-    .steps {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 2rem;
-    }
-    
-    .steps::before {
-        display: none;
-    }
-    
-    .step-card {
-        margin-bottom: 1rem;
-        padding: 2rem 1.5rem;
-    }
-    
-    .step-card:last-child {
-        margin-bottom: 0;
-    }
-    
-    .step-number {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-        margin-bottom: 1.2rem;
     }
     
     .feature-card {
@@ -2057,11 +1594,6 @@ body.menu-open {
         margin: 0 auto;
     }
     
-    .nav-links .mobile-waitlist-button {
-        display: inline-flex;
-        margin-top: 1.5rem;
-    }
-    
     .social-links {
         justify-content: center;
     }
@@ -2079,30 +1611,16 @@ body.menu-open {
         flex-direction: column;
         gap: 2rem;
     }
-    
-    .download-wrapper {
-        padding: 2rem 1.5rem;
-    }
-    
-    .app-icon {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .footer {
-        padding: 3rem 0 2rem;
-    }
 }
 
-/* Small mobile improvements */
 @media (max-width: 576px) {
-    body {
-        font-size: 14px;
+    .container {
+        width: 100%;
+        padding: 0 1.25rem;
     }
     
-    .container {
-        width: 92%;
-        padding: 0 0.5rem;
+    body {
+        font-size: 16px;
     }
     
     .nav-links {
@@ -2312,5 +1830,72 @@ body.menu-open {
     
     .section-tag {
         font-size: 0.7rem;
+    }
+}
+
+/* Additional fixes for mobile responsiveness - These override previous styles */
+
+/* Center align app users text */
+.app-users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: var(--gray-color);
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure consistent font sizes across all pages */
+body, p, .section-description, .hero-description, .step-card p, 
+.feature-description, .key-feature p, .footer-description, 
+.footer-links a, .contact-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Remove waitlist button from mobile dropdown */
+.nav-links .mobile-waitlist-button {
+    display: none;
+}
+
+/* Full width container on mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 1.5rem;
+    }
+    
+    .section-header {
+        max-width: 100%;
+    }
+    
+    .section-description {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 1.25rem;
+    }
+    
+    /* Ensure consistent font sizes on small screens */
+    body, p, .section-description, .hero-description, .step-card p, 
+    .feature-description, .key-feature p, .footer-description, 
+    .footer-links a, .contact-card p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    /* Full width for phones */
+    .app-users {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
     }
 } 
