@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PickMyTask - Hyperlocal Task Sharing App</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -20,11 +25,12 @@
                 <div class="nav-links" id="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
-                    <a href="blog.html">Blog</a>
+                    <a href="careers.html">Careers</a>
                     <a href="help-center.html">Help Center</a>
                     <a href="#contact">Contact</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="cta-button">Join Waiting List</a>
+                    
                 </div>
+                
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -32,7 +38,14 @@
                         <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="waiting-list-button">
+                    <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <span>Join Waiting List</span>
+                </a>
             </nav>
+            
         </div>
     </header>
 
@@ -60,39 +73,33 @@
                     <div class="phone-mockup">
                         <div class="phone-notch"></div>
                         <div class="phone-status-bar">
-                            <div class="status-left">
-                                <span class="time">1:24</span>
-                            </div>
+                            <div class="status-left">1:24</div>
                             <div class="status-right">
-                                <span class="wifi">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
-                                    </svg>
-                                </span>
-                                <span class="battery">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4zM13 18h-2v-2h2v2zm0-4h-2V9h2v5z"/>
-                                    </svg>
-                                </span>
+                                
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-three-quarters"></i>
                             </div>
                         </div>
                         <div class="phone-content">
                             <div class="app-header">
                                 <div class="location-pill">
                                     <div class="logo-icon">
-                                        <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="30" height="30">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
+                                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                        </svg>
                                     </div>
                                     <span>PickMyTask</span>
                                 </div>
-                                <div>
-                                    <img src="assets\avatar_8090406.png" alt="User" width="30" height="30">
+                                <div class="user-avatar">
+                                    <img src="assets\avatar_8090406.png" alt="User" width="36" height="36">
                                 </div>
                             </div>
+                            
                             <div class="search-bar">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                                 </svg>
-                                Search any task...
+                                <span>Search any task...</span>
                                 <button class="filter-button">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/>
@@ -104,7 +111,7 @@
                                 <div class="task-card">
                                     <div class="task-header">
                                         <h3>Organize Storage Room</h3>
-                                        <span class="task-status open">OPEN</span>
+                                        <span class="task-status">OPEN</span>
                                     </div>
                                     <p class="task-description">Clean the storage room, label boxes, and discard unnecessary items.</p>
                                     <div class="task-footer">
@@ -123,9 +130,7 @@
                                     </div>
                                     <div class="task-price-row">
                                         <div class="task-price">
-                                            
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            100.0
+                                            <span class="rupee-symbol">₹</span>100.0
                                         </div>
                                         <button class="pick-button">Pick</button>
                                     </div>
@@ -134,7 +139,7 @@
                                 <div class="task-card">
                                     <div class="task-header">
                                         <h3>Bathroom Deep Clean</h3>
-                                        <span class="task-status open">OPEN</span>
+                                        <span class="task-status">OPEN</span>
                                     </div>
                                     <p class="task-description">Clean tiles, scrub toilet, disinfect surfaces, and mop the floor thoroughly.</p>
                                     <div class="task-footer">
@@ -148,13 +153,12 @@
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                                             </svg>
-                                            Flat no 5, Milestone Apartment
+                                            Milestone Apartment
                                         </div>
                                     </div>
                                     <div class="task-price-row">
                                         <div class="task-price">
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            150.0
+                                            <span class="rupee-symbol">₹</span>150.0
                                         </div>
                                         <button class="pick-button">Pick</button>
                                     </div>
@@ -163,9 +167,9 @@
                                 <div class="task-card">
                                     <div class="task-header">
                                         <h3>Plant Care</h3>
-                                        <span class="task-status open">OPEN</span>
+                                        <span class="task-status">OPEN</span>
                                     </div>
-                                    <p class="task-description">Looking for someone to water our plants while we're on vacation</p>
+                                    <p class="task-description">Water indoor plants daily for 1 week while I'm on vacation.</p>
                                     <div class="task-footer">
                                         <div class="task-category">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -182,25 +186,52 @@
                                     </div>
                                     <div class="task-price-row">
                                         <div class="task-price">
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            80.0
+                                            <span class="rupee-symbol">₹</span>80.0
                                         </div>
                                         <button class="pick-button">Pick</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="task-card">
                                     <div class="task-header">
-                                        <h3>Pet Walking</h3>
-                                        <span class="task-status open">OPEN</span>
+                                        <h3>Grocery Pickup</h3>
+                                        <span class="task-status">OPEN</span>
                                     </div>
-                                    <p class="task-description">Finding a reliable helper to walk my dog on rainy days.</p>
+                                    <p class="task-description">Pickup groceries from the market and deliver to my home before 6 PM.</p>
                                     <div class="task-footer">
                                         <div class="task-category">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
                                             </svg>
-                                            Pet Services
+                                            Delivery
+                                        </div>
+                                        <div class="task-location">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                            </svg>
+                                            Green Park Market
+                                        </div>
+                                    </div>
+                                    <div class="task-price-row">
+                                        <div class="task-price">
+                                            <span class="rupee-symbol">₹</span>120.0
+                                        </div>
+                                        <button class="pick-button">Pick</button>
+                                    </div>
+                                </div>
+
+                                <div class="task-card">
+                                    <div class="task-header">
+                                        <h3>Dog Walking</h3>
+                                        <span class="task-status">OPEN</span>
+                                    </div>
+                                    <p class="task-description">Need someone to walk my dog for 30 minutes in the evening for the next 3 days.</p>
+                                    <div class="task-footer">
+                                        <div class="task-category">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
+                                            </svg>
+                                            Pet Care
                                         </div>
                                         <div class="task-location">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -211,8 +242,7 @@
                                     </div>
                                     <div class="task-price-row">
                                         <div class="task-price">
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            120.0
+                                            <span class="rupee-symbol">₹</span>90.0
                                         </div>
                                         <button class="pick-button">Pick</button>
                                     </div>
@@ -220,28 +250,27 @@
 
                                 <div class="task-card">
                                     <div class="task-header">
-                                        <h3>Grocery Pickup</h3>
-                                        <span class="task-status open">OPEN</span>
+                                        <h3>Tech Setup Help</h3>
+                                        <span class="task-status">OPEN</span>
                                     </div>
-                                    <p class="task-description">Pickup groceries from the market and deliver to my home before 6 PM</p>
+                                    <p class="task-description">Need help setting up my new laptop and transferring files from old computer.</p>
                                     <div class="task-footer">
                                         <div class="task-category">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
                                             </svg>
-                                            Delivery Services
+                                            Tech Support
                                         </div>
                                         <div class="task-location">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                                             </svg>
-                                            Shivaji nagar
+                                            Sector 18, Noida
                                         </div>
                                     </div>
                                     <div class="task-price-row">
                                         <div class="task-price">
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            90.0
+                                            <span class="rupee-symbol">₹</span>200.0
                                         </div>
                                         <button class="pick-button">Pick</button>
                                     </div>
@@ -249,86 +278,27 @@
 
                                 <div class="task-card">
                                     <div class="task-header">
-                                        <h3>Vehicle Cleaning</h3>
-                                        <span class="task-status open">OPEN</span>
+                                        <h3>Furniture Assembly</h3>
+                                        <span class="task-status">OPEN</span>
                                     </div>
-                                    <p class="task-description">Looking for a wuick and convenient vehicle cleaning service.</p>
+                                    <p class="task-description">Need help assembling a new bookshelf and coffee table from IKEA.</p>
                                     <div class="task-footer">
                                         <div class="task-category">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
                                             </svg>
-                                            Auto Services
+                                            Home Help
                                         </div>
                                         <div class="task-location">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                                             </svg>
-                                            Urban Heights Building
+                                            Mayur Vihar
                                         </div>
                                     </div>
                                     <div class="task-price-row">
                                         <div class="task-price">
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            200.0
-                                        </div>
-                                        <button class="pick-button">Pick</button>
-                                    </div>
-                                </div>
-
-                                <div class="task-card">
-                                    <div class="task-header">
-                                        <h3>Party Help</h3>
-                                        <span class="task-status open">OPEN</span>
-                                    </div>
-                                    <p class="task-description">I am looking for someone to help me for party decoration and post-party cleaning.</p>
-                                    <div class="task-footer">
-                                        <div class="task-category">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
-                                            </svg>
-                                            Event Help
-                                        </div>
-                                        <div class="task-location">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                                            </svg>
-                                            Harmony Clubhouse
-                                        </div>
-                                    </div>
-                                    <div class="task-price-row">
-                                        <div class="task-price">
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            250.0
-                                        </div>
-                                        <button class="pick-button">Pick</button>
-                                    </div>
-                                </div>
-
-                                <div class="task-card">
-                                    <div class="task-header">
-                                        <h3>Quick Fixes</h3>
-                                        <span class="task-status open">OPEN</span>
-                                    </div>
-                                    <p class="task-description">Looking for someone to fix a leaky tap and tighten a loose screw.</p>
-                                    <div class="task-footer">
-                                        <div class="task-category">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
-                                            </svg>
-                                            Home Repair
-                                        </div>
-                                        <div class="task-location">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                                            </svg>
-                                            Sunrise Apartments
-                                        </div>
-                                    </div>
-                                    <div class="task-price-row">
-                                        <div class="task-price">
-                                            <svg style="color: #000000;width:16px; height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" fill="#454545"></path></svg>
-                                            60.0
+                                            <span class="rupee-symbol">₹</span>180.0
                                         </div>
                                         <button class="pick-button">Pick</button>
                                     </div>
@@ -336,23 +306,10 @@
                             </div>
                             
                             <div class="app-nav-bar">
-                                <a href="#" class="app-nav-item">
-                                    <svg width="24" height="24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" fill-rule="evenodd" d="M3 10a7 7 0 019.307-6.611 1 1 0 00.658-1.889 9 9 0 105.98 7.501 1 1 0 00-1.988.22A7 7 0 113 10zm14.75-5.338a1 1 0 00-1.5-1.324l-6.435 7.28-3.183-2.593a1 1 0 00-1.264 1.55l3.929 3.2a1 1 0 001.38-.113l7.072-8z"></path> </g></svg>
-                                    
-                                    <span>My Tasks</span>
-                                </a>
-                                <a href="#" class="app-nav-item active">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                                    </svg>
-                                    <span>Home</span>
-                                </a>
-                                <a href="#" class="app-nav-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                    </svg>
-                                    <span>Profile</span>
-                                </a>
+                                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z"></path></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#34A853"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM11 13V19H13V13H11Z"></path></svg>
+                                
+                                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"></path></svg>
                             </div>
                         </div>
                     </div>
@@ -570,9 +527,7 @@
             <div class="contact-info">
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-                        </svg>
+                        <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3>Call</h3>
                     <p><a href="tel:+919518791171">(+91) 9518791171</a></p>
@@ -580,7 +535,7 @@
 
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.42 9.49c-.19-.09-1.1-.54-1.27-.61s-.29-.09-.42.1-.48.6-.59.73-.21.14-.4 0a5.13 5.13 0 0 1-1.49-.92 5.25 5.25 0 0 1-1-1.29c-.11-.18 0-.28.08-.38s.18-.21.28-.32a1.39 1.39 0 0 0 .18-.31.38.38 0 0 0 0-.33c0-.09-.42-1-.58-1.37s-.3-.32-.41-.32h-.4a.72.72 0 0 0-.5.23 2.1 2.1 0 0 0-.65 1.55A3.59 3.59 0 0 0 5 8.2 8.32 8.32 0 0 0 8.19 11c.44.19.78.3 1.05.39a2.53 2.53 0 0 0 1.17.07 1.93 1.93 0 0 0 1.26-.88 1.67 1.67 0 0 0 .11-.88c-.05-.07-.17-.12-.36-.21z"></path><path d="M13.29 2.68A7.36 7.36 0 0 0 8 .5a7.44 7.44 0 0 0-6.41 11.15l-1 3.85 3.94-1a7.4 7.4 0 0 0 3.55.9H8a7.44 7.44 0 0 0 5.29-12.72zM8 14.12a6.12 6.12 0 0 1-3.15-.87l-.22-.13-2.34.61.62-2.28-.14-.23a6.18 6.18 0 0 1 9.6-7.65 6.12 6.12 0 0 1 1.81 4.37A6.19 6.19 0 0 1 8 14.12z"></path></g></svg>
+                        <i class="fab fa-whatsapp"></i>
                     </div>
                     <h3>WhatsApp</h3>
                     <p><a href="https://wa.me/+919518791171">(+91) 9518791171</a></p>
@@ -588,10 +543,7 @@
                 
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
+                        <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Email</h3>
                     <p><a href="mailto:support@pickmytask.com">support@pickmytask.com</a></p>
@@ -608,7 +560,7 @@
                 <div class="footer-brand">
                     <a href="#" class="footer-logo">
                         <div class="logo-icon">
-                            <img src="assets\Dark_Background-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
+                            <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
                         </div>
                         PickMyTask
                     </a>
@@ -622,8 +574,6 @@
                     <ul class="footer-links">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="careers.html">Careers</a></li>
-                        <li><a href="press.html">Press</a></li>
-                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
                 
@@ -631,8 +581,6 @@
                     <h4 class="footer-heading">Support</h4>
                     <ul class="footer-links">
                         <li><a href="help-center.html">Help Center</a></li>
-                        <li><a href="safety.html">Safety</a></li>
-                        <li><a href="community-guidelines.html">Community Guidelines</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -642,8 +590,6 @@
                     <ul class="footer-links">
                         <li><a href="terms.html">Terms of Service</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="cookies.html">Cookie Policy</a></li>
-                        <li><a href="accessibility.html">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
@@ -665,6 +611,27 @@
                     header.classList.toggle('mobile-menu-open');
                 });
             }
+
+            // Add scroll animation for elements
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.feature-card, .key-feature, .step-card, .contact-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initial check
+            animateOnScroll();
+            
+            // Listen for scroll
+            window.addEventListener('scroll', animateOnScroll);
         });
     </script>
 </body>

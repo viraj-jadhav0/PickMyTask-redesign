@@ -5,209 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - PickMyTask</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
-    <style>
-        :root {
-            --primary: #029791;
-            --primary-light: #029791;
-            --primary-dark: #029791;
-            --accent: #34A853;
-            --secondary: #0a1525;
-            --background: #FFFFFF;
-            --foreground: #202124;
-            --secondary-bg: #F8F9FA;
-            --muted: #5F6368;
-            --border: #DADCE0;
-            --card-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            --radius: 12px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: var(--background);
-            color: var(--foreground);
-            font-family: 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        header {
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            font-size: 1.25rem;
-            color: var(--foreground);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-icon svg {
-            filter: drop-shadow(0 2px 4px rgba(10, 21, 37, 0.15));
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--foreground);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .cta-button {
-            background-color: var(--secondary);
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(10, 21, 37, 0.3);
-        }
-        
-        .cta-button:hover {
-            background-color: #1a2942;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(10, 21, 37, 0.4);
-        }
-
-        /* Coming Soon Page Styles */
-        .coming-soon-section {
-            padding: 12rem 0;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
-        }
-
-        .coming-soon-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .coming-soon-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            background: linear-gradient(135deg, #029791, #34A853);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .coming-soon-icon svg {
-            width: 60px;
-            height: 60px;
-            color: white;
-        }
-
-        h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #029791, #029725);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-
-        .coming-soon-description {
-            color: var(--muted);
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        .page-specific-content {
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--card-shadow);
-        }
-
-        .waiting-list-button {
-            background: linear-gradient(135deg, #029791, #029725);
-            color: white;
-            padding: 0.85rem 1.8rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(10, 21, 37, 0.3);
-        }
-        
-        .waiting-list-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(10, 21, 37, 0.4);
-        }
-
-        footer {
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .copyright {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -215,56 +17,181 @@
             <nav>
                 <a href="index.html" class="logo">
                     <div class="logo-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#4285F4"/>
-                        </svg>
+                        <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
                     </div>
                     PickMyTask
                 </a>
-                <div class="nav-links">
+                <div class="nav-links" id="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="help-center.html">Help Center</a>
                     <a href="#contact">Contact</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="cta-button">Join Waiting List</a>
                 </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="waiting-list-button">
+                    <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <span>Join Waiting List</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <section class="coming-soon-section">
+    <section class="hero" style="padding-bottom: 2rem;">
         <div class="container">
-            <div class="coming-soon-content">
-                <div class="coming-soon-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
+            <div class="section-header" style="margin-top: 4rem; text-align: center;">
+                <div class="section-tag">Legal Information</div>
+                <h2>Privacy <span class="gradient-text">Policy</span></h2>
+                <p class="section-description">Last Updated: January 15, 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="key-features">
+        <div class="container">
+            <div class="privacy-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <div class="privacy-section">
+                    <h3>Introduction</h3>
+                    <p>At PickMyTask, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, process, and share your information when you use our platform, including our website, mobile applications, and services.</p>
+                    <p>Please read this privacy policy carefully to understand our policies and practices regarding your information and how we will treat it.</p>
                 </div>
-                <h1>Privacy <span class="gradient-text">Policy</span></h1>
-                <p class="coming-soon-description">Our detailed Privacy Policy is being prepared and will be available soon.</p>
                 
-                <div class="page-specific-content">
-                    <h3>Your Privacy Matters</h3>
-                    <p>At PickMyTask, we take your privacy seriously. Our comprehensive Privacy Policy will detail how we collect, use, and protect your personal information.</p>
-                    <p>We believe in transparency and giving you control over your data. Our Privacy Policy will outline your rights regarding your information and how you can exercise them.</p>
-                    <p>We're committed to implementing robust security measures to protect your data and ensuring compliance with relevant privacy laws and regulations.</p>
+                <div class="privacy-section">
+                    <h3>Information We Collect</h3>
+                    <p>We collect several types of information from and about users of our platform, including:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>Personal Information:</strong> This includes information that can be used to identify you such as your name, email address, phone number, postal address, payment information, and identification documents.</li>
+                        <li><strong>Profile Information:</strong> Information you provide when setting up your profile, such as profile pictures, skills, qualifications, and preferences.</li>
+                        <li><strong>Usage Information:</strong> Details of your visits to our platform, including traffic data, location data, logs, and other communication data and the resources that you access and use on the platform.</li>
+                        <li><strong>Device Information:</strong> Information about your computer, mobile device, and internet connection, including your IP address, operating system, browser type, and device identifiers.</li>
+                        <li><strong>Location Information:</strong> We collect your precise or approximate location information as necessary to provide our services.</li>
+                    </ul>
                 </div>
                 
-                <a href="index.html" class="waiting-list-button">
-                    <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
-                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                    </svg>
-                    <span>Return to Home</span>
-                </a>
+                <div class="privacy-section">
+                    <h3>How We Use Your Information</h3>
+                    <p>We use the information we collect about you or that you provide to us for various purposes, including:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>To present our platform and its contents to you</li>
+                        <li>To provide you with information, products, or services that you request from us</li>
+                        <li>To fulfill the purposes for which you provided the information</li>
+                        <li>To facilitate transactions and payments</li>
+                        <li>To match task posters with appropriate helpers</li>
+                        <li>To verify your identity and prevent fraud</li>
+                        <li>To communicate with you about your account, updates to our policies, or other administrative matters</li>
+                        <li>To improve our platform and user experience</li>
+                        <li>To ensure the safety and security of our platform and users</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>Information Sharing and Disclosure</h3>
+                    <p>We may disclose personal information that we collect or you provide as described in this privacy policy:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>Between Users:</strong> When you post a task or offer to help with a task, we share certain information between the parties to facilitate the service.</li>
+                        <li><strong>Service Providers:</strong> We may share your information with third-party vendors, service providers, and other business partners who need access to such information to carry out work on our behalf.</li>
+                        <li><strong>Legal Requirements:</strong> We may disclose your information in response to a subpoena, court order, or other governmental request.</li>
+                        <li><strong>Business Transfers:</strong> In connection with any merger, sale of company assets, financing, or acquisition of all or a portion of our business by another company.</li>
+                        <li><strong>With Your Consent:</strong> We may share your information with third parties when we have your consent to do so.</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>Your Rights and Choices</h3>
+                    <p>You have certain rights and choices regarding your personal information. Depending on your location, these may include:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Accessing, correcting, or deleting your personal information</li>
+                        <li>Objecting to our use of your information</li>
+                        <li>Requesting restriction of the processing of your information</li>
+                        <li>Data portability</li>
+                        <li>Opting out of certain communications</li>
+                    </ul>
+                    <p>To exercise any of these rights, please contact us using the contact information provided below.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>Data Security</h3>
+                    <p>We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. However, the transmission of information via the internet is not completely secure. Although we do our best to protect your personal information, we cannot guarantee the security of your personal information transmitted to our platform.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>Changes to Our Privacy Policy</h3>
+                    <p>We may update our privacy policy from time to time. If we make material changes to how we treat our users' personal information, we will notify you through a notice on our website or by email.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h3>Contact Information</h3>
+                    <p>If you have any questions or concerns about this privacy policy or our privacy practices, please contact us at:</p>
+                    <p>Email: <a href="mailto:privacy@pickmytask.com">privacy@pickmytask.com</a></p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
+                        </div>
+                        PickMyTask
+                    </a>
+                    <p class="footer-description">Your hyper-local task-sharing platform. Connect, help, and get things done.</p>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="copyright">
                 <p>© 2024 PickMyTask. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const header = document.querySelector('header');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    header.classList.toggle('mobile-menu-open');
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

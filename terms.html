@@ -4,210 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - PickMyTask</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
-    <style>
-        :root {
-            --primary: #029791;
-            --primary-light: #029791;
-            --primary-dark: #029791;
-            --accent: #34A853;
-            --secondary: #0a1525;
-            --background: #FFFFFF;
-            --foreground: #202124;
-            --secondary-bg: #F8F9FA;
-            --muted: #5F6368;
-            --border: #DADCE0;
-            --card-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            --radius: 12px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: var(--background);
-            color: var(--foreground);
-            font-family: 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        header {
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            font-size: 1.25rem;
-            color: var(--foreground);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-icon svg {
-            filter: drop-shadow(0 2px 4px rgba(10, 21, 37, 0.15));
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--foreground);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .cta-button {
-            background-color: var(--secondary);
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(10, 21, 37, 0.3);
-        }
-        
-        .cta-button:hover {
-            background-color: #1a2942;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(10, 21, 37, 0.4);
-        }
-
-        /* Coming Soon Page Styles */
-        .coming-soon-section {
-            padding: 12rem 0;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
-        }
-
-        .coming-soon-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .coming-soon-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            background: linear-gradient(135deg, #029791, #34A853);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .coming-soon-icon svg {
-            width: 60px;
-            height: 60px;
-            color: white;
-        }
-
-        h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #029791, #029725);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-
-        .coming-soon-description {
-            color: var(--muted);
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        .page-specific-content {
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--card-shadow);
-        }
-
-        .waiting-list-button {
-            background: linear-gradient(135deg, #029791, #029725);
-            color: white;
-            padding: 0.85rem 1.8rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(10, 21, 37, 0.3);
-        }
-        
-        .waiting-list-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(10, 21, 37, 0.4);
-        }
-
-        footer {
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .copyright {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -215,42 +18,60 @@
             <nav>
                 <a href="index.html" class="logo">
                     <div class="logo-icon">
-                        <img src="assets/Dark Background.png" alt="PickMyTask Logo" width="40" height="40">
+                        <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
                     </div>
                     PickMyTask
                 </a>
-                <div class="nav-links">
+                <div class="nav-links" id="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="help-center.html">Help Center</a>
                     <a href="#contact">Contact</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="cta-button">Join Waiting List</a>
                 </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="waiting-list-button">
+                    <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <span>Join Waiting List</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <section class="coming-soon-section">
+    <section class="hero" style="padding-bottom: 2rem;">
         <div class="container">
-            <div class="coming-soon-content">
-                <div class="coming-soon-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                </div>
-                <h1>Terms of <span class="gradient-text">Service</span></h1>
-                <p class="coming-soon-description">Our detailed Terms of Service are being finalized and will be available soon.</p>
-                
-                <div class="page-specific-content">
+            <div class="section-header" style="margin-top: 4rem; text-align: center;">
+                <div class="section-tag">Legal Information</div>
+                <h2>Terms of <span class="gradient-text">Service</span></h2>
+                <p class="section-description">Last Updated: January 15, 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="key-features">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 3rem 1rem;">
+                <div style="margin-bottom: 3rem;">
+                    <i class="fas fa-file-contract" style="font-size: 64px; color: #029791; margin-bottom: 1.5rem;"></i>
                     <h3>Our Commitment to You</h3>
-                    <p>At PickMyTask, we're committed to creating a safe, fair, and transparent platform for all users. Our comprehensive Terms of Service will outline the rules and guidelines that govern the use of our platform.</p>
-                    <p>These terms will cover important aspects such as user responsibilities, platform usage, payment processes, dispute resolution, and more.</p>
-                    <p>We believe in clear communication and want to ensure that our terms protect both task requesters and providers while creating a positive community experience.</p>
+                    <p style="margin-top: 1rem;">At PickMyTask, we're committed to creating a safe, fair, and transparent platform for all users. Our comprehensive Terms of Service will outline the rules and guidelines that govern the use of our platform.</p>
+                    <p style="margin-top: 1rem;">These terms will cover important aspects such as user responsibilities, platform usage, payment processes, dispute resolution, and more.</p>
+                    <p style="margin-top: 1rem;">We believe in clear communication and want to ensure that our terms protect both task requesters and providers while creating a positive community experience.</p>
                 </div>
+                
+                <p style="font-style: italic; color: #5F6368; margin-bottom: 2rem;">Our detailed Terms of Service are being finalized and will be available soon.</p>
                 
                 <a href="index.html" class="waiting-list-button">
-                    <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
-                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                    </svg>
+                    <i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i>
                     <span>Return to Home</span>
                 </a>
             </div>
@@ -259,10 +80,59 @@
 
     <footer>
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
+                        </div>
+                        PickMyTask
+                    </a>
+                    <p class="footer-description">Your hyper-local task-sharing platform. Connect, help, and get things done.</p>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="copyright">
                 <p>© 2024 PickMyTask. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const header = document.querySelector('header');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    header.classList.toggle('mobile-menu-open');
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

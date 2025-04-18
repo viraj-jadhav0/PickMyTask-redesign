@@ -3,281 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - PickMyTask</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
-    <style>
-        :root {
-            --primary: #029791;
-            --primary-light: #029791;
-            --primary-dark: #029791;
-            --accent: #34A853;
-            --secondary: #0a1525;
-            --background: #FFFFFF;
-            --foreground: #202124;
-            --secondary-bg: #F8F9FA;
-            --muted: #5F6368;
-            --border: #DADCE0;
-            --card-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            --radius: 12px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: var(--background);
-            color: var(--foreground);
-            font-family: 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-        
-        header {
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            font-size: 1.25rem;
-            color: var(--foreground);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-icon svg {
-            filter: drop-shadow(0 2px 4px rgba(10, 21, 37, 0.15));
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--foreground);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .cta-button {
-            background-color: var(--secondary);
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(10, 21, 37, 0.3);
-        }
-        
-        .cta-button:hover {
-            background-color: #1a2942;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(10, 21, 37, 0.4);
-        }
-
-        .section-tag {
-            display: inline-block;
-            background-color: rgba(10, 21, 37, 0.1);
-            color: var(--secondary);
-            padding: 0.35rem 0.85rem;
-            border-radius: 2rem;
-            font-size: 0.825rem;
-            font-weight: 500;
-            margin-bottom: 1.25rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #029791, #029725);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-
-        .section-description {
-            color: var(--muted);
-            font-size: 1.125rem;
-        }
-
-        /* About page specific styles */
-        .about-section {
-            padding: 10rem 0 5rem;
-        }
-
-        .about-content {
-            display: flex;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .about-mission {
-            background-color: var(--secondary-bg);
-            padding: 4rem 0;
-            margin: 2rem 0;
-            border-radius: var(--radius);
-        }
-
-        .mission-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .team-section {
-            padding: 5rem 0;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .team-member {
-            text-align: center;
-        }
-
-        .team-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 1.5rem;
-            background-color: var(--secondary-bg);
-        }
-
-        .team-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .team-name {
-            font-weight: 600;
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-role {
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .about-image {
-                margin-top: 2rem;
-            }
-            
-            .team-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-
-        @media (max-width: 576px) {
-            .nav-links {
-                display: none;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .about-section {
-                padding: 8rem 0 3rem;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-header {
-                margin-bottom: 2rem;
-            }
-        }
-    </style>
+    <title>About us - PickMyTask</title>
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -285,74 +18,141 @@
             <nav>
                 <a href="index.html" class="logo">
                     <div class="logo-icon">
-                        <img src="assets/PicBackground.png" alt="PickMyTask Logo" width="40" height="40">
+                        <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
                     </div>
                     PickMyTask
                 </a>
-                <div class="nav-links">
+                <div class="nav-links" id="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="help-center.html">Help Center</a>
                     <a href="#contact">Contact</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="cta-button">Join Waiting List</a>
+                    
                 </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="waiting-list-button">
+                    <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <span>Join Waiting List</span>
+                </a>
             </nav>
+            
         </div>
     </header>
 
-    <section class="about-section">
+    <section class="hero" style="padding-bottom: 4rem; background: linear-gradient(to bottom, #f8f9fa, #ffffff);">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Our Story</div>
+            <div class="section-header" style="margin-top: 4rem; text-align: center;">
+                <div class="section-tag">Our Company</div>
                 <h2>About <span class="gradient-text">PickMyTask</span></h2>
-                <p class="section-description">Building community through local task-sharing and connections.</p>
+                <p class="section-description" style="max-width: 700px; margin: 1.5rem auto; font-size: 1.2rem;">Your hyper-local task-sharing platform. Connect, help, and get things done.</p>
             </div>
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNGNUY1RjUiLz48cGF0aCBkPSJNNzkuOTIxOSAxMjJDOTYuNDg4MiAxMjIgMTA5Ljg0NCAxMDguNjQ0IDEwOS44NDQgOTIuMDc4MUMxMDkuODQ0IDc1LjUxMTcgOTYuNDg4MiA2Mi4xNTYyIDc5LjkyMTkgNjIuMTU2MkM2My4zNTU1IDYyLjE1NjIgNTAgNzUuNTExNyA1MCA5Mi4wNzgxQzUwIDEwOC42NDQgNjMuMzU1NSAxMjIgNzkuOTIxOSAxMjJaIiBmaWxsPSIjNDI4NUY0Ii8+PHBhdGggZD0iTTIyNS4wNzggMTQ5LjY4OEMyNDEuNjQ0IDE0OS42ODggMjU1IDE2My4wNDQgMjU1IDE3OS42MDlDMjU1IDE5Ni4xNzUgMjQxLjY0NCAyMDkuNTMxIDIyNS4wNzggMjA5LjUzMUMyMDguNTEyIDIwOS41MzEgMTk1LjE1NiAxOTYuMTc1IDE5NS4xNTYgMTc5LjYwOUMxOTUuMTU2IDE2My4wNDQgMjA4LjUxMiAxNDkuNjg4IDIyNS4wNzggMTQ5LjY4OFoiIGZpbGw9IiMzNEE4NTMiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjQwIiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjEzNSIgeT0iMTM1IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiM0Mjg1RjQiLz48L3N2Zz4=" alt="PickMyTask Logo" style="width: 120px; height: 120px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Who We Are</h3>
-                    <p>PickMyTask is a hyperlocal task-sharing platform founded in 2023 with a simple mission: to connect neighbors and build stronger communities through everyday tasks.</p>
-                    <p>We believe in the power of local connections and that everyone has skills that can benefit others. Our platform makes it easy to find help with daily tasks while also providing opportunities for individuals to earn by sharing their skills and time.</p>
-                    <p>As a community-focused startup, we're dedicated to creating a safe, trustworthy environment where people can connect, help each other, and build lasting relationships.</p>
+    <section class="key-features" style="padding: 4rem 0; background-color: #ffffff;">
+        <div class="container">
+            <div class="about-content" style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <div class="about-section" style="background-color: #f8f9fa; padding: 3rem; border-radius: 16px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">Founded in January 2025 by visionary entrepreneur <strong>Aniket Kasar</strong>, PickMyTask is India's premier hyperlocal task sharing platform that connects busy individuals with verified local helpers who can assist with time-consuming daily chores. In today's fast-paced world where time is our most precious resource, PickMyTask serves as a bridge between people who need assistance with everyday tasks and those willing to help for a reasonable fee.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Our mission is simple yet powerful: to transform how Indians manage their daily chores while creating flexible earning opportunities within local communities. Through innovative technology and a deep understanding of everyday challenges, we're building India's most trusted community of helpers and users.</p>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="PickMyTask team collaboration">
+                
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <div class="section-tag">Our Journey</div>
+                    <h2>From <span class="gradient-text">Vision</span> to Reality</h2>
+                </div>
+                
+                <div class="about-section" style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; margin-bottom: 4rem;">
+                    <div style="flex: 1 1 300px;">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNGNUY1RjUiLz48cGF0aCBkPSJNMjAwIDE1MEMxODkuMzkzIDE1MCAxODEgMTU4LjM5MyAxODEgMTY5QzE4MSAxNzkuNjA3IDE4OS4zOTMgMTg4IDIwMCAxODhDMjEwLjYwNyAxODggMjE5IDE3OS42MDcgMjE5IDE2OUMyMTkgMTU4LjM5MyAyMTAuNjA3IDE1MCAyMDAgMTUwWk0xNTAgMTY5QzE1MCAxNDEuMzg2IDE3Mi4zODYgMTE5IDIwMCAxMTlDMjI3LjYxNCAxMTkgMjUwIDE0MS4zODYgMjUwIDE2OUMyNTAgMTk2LjYxNCAyMjcuNjE0IDIxOSAyMDAgMjE5QzE3Mi4zODYgMjE5IDE1MCAxOTYuNjE0IDE1MCAxNjlaIiBmaWxsPSIjMDI5NzkxIi8+PHBhdGggZD0iTTI0MCA4MEMyNzUuMzQ2IDgwIDMwNCAxMDguNjU0IDMwNCAxNDRDMzA0IDE3OS4zNDYgMjc1LjM0NiAyMDggMjQwIDIwOEMyMDQuNjU0IDIwOCAxNzYgMTc5LjM0NiAxNzYgMTQ0QzE3NiAxMDguNjU0IDIwNC42NTQgODAgMjQwIDgwWiIgZmlsbD0iIzM0QTg1MyIgZmlsbC1vcGFjaXR5PSIwLjUiLz48cGF0aCBkPSJNMTcwIDEwMEMxODguMjI1IDEwMCAyMDMgMTE0Ljc3NSAyMDMgMTMzQzIwMyAxNTEuMjI1IDE4OC4yMjUgMTY2IDE3MCAxNjZDMTUxLjc3NSAxNjYgMTM3IDE1MS4yMjUgMTM3IDEzM0MxMzcgMTE0Ljc3NSAxNTEuNzc1IDEwMCAxNzAgMTAwWiIgZmlsbD0iIzQyODVGNCIgZmlsbC1vcGFjaXR5PSIwLjUiLz48L3N2Zz4=" alt="Vision to Reality" style="width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                    <div style="flex: 1 1 400px;">
+                        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem;">The journey of PickMyTask began when founder Aniket Kasar recognized a universal challenge in modern Indian life: the constant struggle to balance work, family, and personal commitments while managing countless time-consuming daily tasks.</p>
+                        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem;">Despite India's massive digital transformation and the rise of various on-demand services, there remained a significant gap in solutions for basic everyday chores like waiting for repair technicians, watering plants during vacations, picking up children from school, or standing in long queues at banks and hospitals.</p>
+                        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem;">Aniket envisioned a platform that would allow people to share these mundane but necessary tasks with trusted individuals in their community. This vision materialized in January 2025 with the launch of PickMyTask.</p>
+                        <p style="font-size: 1.05rem; line-height: 1.7;">What started as a solution to a personal frustration evolved into a comprehensive platform designed to address the unique challenges of India's diverse communities. From metropolitan cities to emerging tier-2 and tier-3 markets, PickMyTask is revolutionizing how daily chores are managed across the country.</p>
+                    </div>
+                </div>
+                
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <div class="section-tag">What Drives Us</div>
+                    <h2>Our Mission & <span class="gradient-text">Values</span></h2>
+                    <p class="section-description" style="max-width: 700px; margin: 1.5rem auto;">At PickMyTask, we're driven by a clear mission: to help Indians reclaim their time by creating a trusted community marketplace for everyday tasks.</p>
+                </div>
+                
+                <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0 4rem;">
+                    <div class="value-card" style="padding: 2rem; border-radius: 16px; background-color: #f8f9fa; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #029791, #34A853); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-users" style="color: white; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Community Trust</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.6;">We believe in the power of neighborhood connections and strive to create a platform where trust is paramount.</p>
+                    </div>
+                    
+                    <div class="value-card" style="padding: 2rem; border-radius: 16px; background-color: #f8f9fa; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #029791, #34A853); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-clock" style="color: white; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Time Valuation</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.6;">We recognize that time is precious, and helping others save it is a valuable service worthy of fair compensation.</p>
+                    </div>
+                    
+                    <div class="value-card" style="padding: 2rem; border-radius: 16px; background-color: #f8f9fa; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #029791, #34A853); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-universal-access" style="color: white; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Accessibility</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.6;">We design our platform to be intuitive and accessible to all Indians, regardless of their technical proficiency.</p>
+                    </div>
+                    
+                    <div class="value-card" style="padding: 2rem; border-radius: 16px; background-color: #f8f9fa; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #029791, #34A853); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-handshake" style="color: white; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Mutual Respect</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.6;">We foster a community where both task posters and helpers treat each other with dignity and appreciation.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; background: linear-gradient(to right, #f8f9fa, #ffffff, #f8f9fa); padding: 3rem; border-radius: 16px; margin-top: 2rem;">
+                    <p style="font-size: 1.2rem; line-height: 1.8; font-weight: 500; max-width: 800px; margin: 0 auto;">These values guide every decision we make, from platform development to community guidelines, ensuring that PickMyTask remains aligned with the needs of everyday Indians.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="about-mission">
-                <div class="mission-content">
-                    <h3>Our Mission</h3>
-                    <p>At PickMyTask, we're on a mission to revolutionize how communities interact by creating a platform that enables meaningful connections through shared tasks. We envision a world where neighbors are just a click away from both receiving help and offering their skills.</p>
+    <section id="download" class="download-section" style="background-color: #f8f9fa; padding: 4rem 0;">
+        <div class="container">
+            <div class="download-wrapper" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+                <div class="download-content" style="flex: 1 1 400px;">
+                    <div class="section-tag">Join Us Today</div>
+                    <h2>Be part of the revolution</h2>
+                    <p class="section-description">Connect with trusted local helpers who can take care of your everyday tasks. Be among the first to experience PickMyTask in your area.</p><br>
+                    
+                    <div class="download-buttons">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="waiting-list-button">
+                            <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            </svg>
+                            <span>Join Waiting List</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="team-section">
-                <h3>Our Leadership Team</h3>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Founder & CEO">
-                        </div>
-                        <h4 class="team-name">Alex Thompson</h4>
-                        <p class="team-role">Founder & CEO</p>
-                        <p>Passionate about building community-focused technology that brings people together.</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="COO">
-                        </div>
-                        <h4 class="team-name">Sarah Chen</h4>
-                        <p class="team-role">Chief Operations Officer</p>
-                        <p>Expert in scaling operations and building efficient organizational systems.</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="CTO">
-                        </div>
-                        <h4 class="team-name">Michael Rodriguez</h4>
-                        <p class="team-role">Chief Technology Officer</p>
-                        <p>Experienced tech leader with a background in building scalable platforms.</p>
-                    </div>
+                <div class="download-image" style="flex: 1 1 300px; text-align: center;">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNGNUY1RjUiLz48cGF0aCBkPSJNNzkuOTIxOSAxMjJDOTYuNDg4MiAxMjIgMTA5Ljg0NCAxMDguNjQ0IDEwOS44NDQgOTIuMDc4MUMxMDkuODQ0IDc1LjUxMTcgOTYuNDg4MiA2Mi4xNTYyIDc5LjkyMTkgNjIuMTU2MkM2My4zNTU1IDYyLjE1NjIgNTAgNzUuNTExNyA1MCA5Mi4wNzgxQzUwIDEwOC42NDQgNjMuMzU1NSAxMjIgNzkuOTIxOSAxMjJaIiBmaWxsPSIjNDI4NUY0Ii8+PHBhdGggZD0iTTIyNS4wNzggMTQ5LjY4OEMyNDEuNjQ0IDE0OS42ODggMjU1IDE2My4wNDQgMjU1IDE3OS42MDlDMjU1IDE5Ni4xNzUgMjQxLjY0NCAyMDkuNTMxIDIyNS4wNzggMjA5LjUzMUMyMDguNTEyIDIwOS41MzEgMTk1LjE1NiAxOTYuMTc1IDE5NS4xNTYgMTc5LjYwOUMxOTUuMTU2IDE2My4wNDQgMjA4LjUxMiAxNDkuNjg4IDIyNS4wNzggMTQ5LjY4OFoiIGZpbGw9IiMzNEE4NTMiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjQwIiBmaWxsPSJ3aGl0ZSIvPjxyZWN0IHg9IjEzNSIgeT0iMTM1IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiM0Mjg1RjQiLz48L3N2Zz4=" alt="App Icon" class="app-icon" style="width: 200px; height: 200px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 24px;">
                 </div>
             </div>
         </div>
@@ -360,10 +160,72 @@
 
     <footer>
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="assets\PicBackground-removebg-preview.png" alt="PickMyTask Logo" width="40" height="40">
+                        </div>
+                        PickMyTask
+                    </a>
+                    <p class="footer-description">Your hyper-local task-sharing platform. Connect, help, and get things done.</p>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="copyright">
                 <p>© 2024 PickMyTask. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const header = document.querySelector('header');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    header.classList.toggle('mobile-menu-open');
+                });
+            }
+            
+            // Add hover effect for value cards
+            const valueCards = document.querySelectorAll('.value-card');
+            valueCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
