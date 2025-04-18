@@ -28,14 +28,23 @@
                     <a href="careers.html">Careers</a>
                     <a href="help-center.html">Help Center</a>
                     <a href="#contact">Contact</a>
-                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="waiting-list-button mobile-waitlist-button">
+                        <svg width="20" height="20" fill="#ffffff" viewBox="0 0 24 24">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        <span>Join Waiting List</span>
+                    </a>
                 </div>
                 
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </button>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNbXRkBnooshpyGX-nPj28PqjetqZtjgL1fHadr9rxTKULDw/viewform" target="_blank" class="waiting-list-button">
@@ -605,10 +614,21 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const header = document.querySelector('header');
+            const navLinks = document.getElementById('nav-links');
             
             if (mobileMenuToggle) {
                 mobileMenuToggle.addEventListener('click', function() {
                     header.classList.toggle('mobile-menu-open');
+                    document.body.classList.toggle('menu-open');
+                });
+                
+                // Close mobile menu when clicking on a link
+                const menuLinks = navLinks.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        header.classList.remove('mobile-menu-open');
+                        document.body.classList.remove('menu-open');
+                    });
                 });
             }
 
