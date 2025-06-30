@@ -74,32 +74,34 @@ const DollarSignIcon = () => (
   </svg>
 )
 
-export default function FeatureCards({ showContent }) {
+export default function FeatureCards({ showContent, style }) {
   return (
-    <div className="w-full py-16" style={{ backgroundColor: "#001413" }}>
-      <div className="container mx-auto px-4">
+    <div className="text-white py-16 px-6">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <div
-            className={`inline-block px-4 py-1.5 bg-[#029791]/20 rounded-full text-sm font-medium text-[#029791] mb-4 entrance-bounce-in stagger-1 ${showContent ? "animate" : ""}`}
+            className={`inline-block px-6 py-3 bg-[#029791]/20 rounded-full text-sm font-medium text-[#029791] mb-6 entrance-bounce-in stagger-1 ${showContent ? "animate" : ""}`}
           >
             KEY FEATURES
           </div>
           <h2
-            className={`text-4xl md:text-5xl font-bold mb-4 entrance-fade-up stagger-2 ${showContent ? "animate" : ""}`}
+            className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 entrance-fade-up stagger-2 ${showContent ? "animate" : ""}`}
           >
             <span className="text-white">What Makes </span>
-            <span className="text-[#029791]">PickMyTask™</span>
+            <span className="text-[#029791]">PickMyTask</span>
             <span className="text-white"> Different</span>
           </h2>
-          <p className={`text-gray-300 max-w-2xl mx-auto entrance-fade-up stagger-3 ${showContent ? "animate" : ""}`}>
+          <p
+            className={`text-gray-300 max-w-3xl mx-auto text-xl leading-relaxed entrance-fade-up stagger-3 ${showContent ? "animate" : ""}`}
+          >
             Our app is designed to make local task-sharing simple, secure, and efficient.
           </p>
           <div
-            className={`w-24 h-0.5 bg-white mx-auto mt-8 entrance-scale-up stagger-4 ${showContent ? "animate" : ""}`}
+            className={`w-24 h-1 bg-[#029791] mx-auto mt-8 entrance-scale-up stagger-4 ${showContent ? "animate" : ""}`}
           ></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className={`entrance-scale-up stagger-5 ${showContent ? "animate" : ""}`}>
             <TiltCard icon={<ClockIcon />} title="On-demand Assistance" description="For everyday chores and tasks" />
           </div>
@@ -123,10 +125,10 @@ function TiltCard({ icon, title, description }) {
   const [tiltStyle, setTiltStyle] = useState({
     transform: "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)",
     transition: "all 0.1s ease",
-    backgroundColor: "#121212",
-    border: "1px solid rgba(255, 255, 255, 0.2)",
+    backgroundColor: "rgba(255, 255, 255, 0.05)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
     backdropFilter: "blur(8px)",
-    borderRadius: "0.75rem",
+    borderRadius: "1rem",
     padding: "2rem",
     height: "100%",
     display: "flex",
@@ -171,12 +173,12 @@ function TiltCard({ icon, title, description }) {
     <div ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={tiltStyle}>
       <div
         className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
-        style={{ backgroundColor: "rgba(0, 26, 25, 0.7)" }}
+        style={{ backgroundColor: "#029791" }}
       >
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+      <p className="text-gray-300 text-lg leading-relaxed">{description}</p>
     </div>
   )
 }

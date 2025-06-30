@@ -3,11 +3,15 @@
 import "./globals.css"
 import "./App.css"
 import { useState, useEffect } from "react"
-
-import { Navbar } from "./Navbar"
+import ComingSoonSection from "./coming"
+import InvestmentContactSection from "./invest"
+import { Navbar } from "./navbar"
 import Section from "./down"
 import FeatureCards from "./cards"
 import BenefitsSection from "./benifit"
+import LandingPage from './landing_page'
+import Footer from "./footer"
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -74,6 +78,11 @@ function App() {
         <Section showContent={showContent} />
         <FeatureCards showContent={showContent} style={{ backgroundColor: "#121212" }} />
         <BenefitsSection showContent={showContent} />
+        <LandingPage  />
+        <ComingSoonSection/>
+        <InvestmentContactSection showContent={true} />
+        <Footer/>
+        
       </div>
     </div>
   )

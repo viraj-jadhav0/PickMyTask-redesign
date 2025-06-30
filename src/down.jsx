@@ -85,67 +85,6 @@ const Section = ({ showContent }) => {
           box-shadow: 0 4px 12px rgba(2, 151, 145, 0.3);
         }
 
-        /* Phone-shaped background hover effect - faster and smoother */
-        @keyframes cleanGlow {
-          0%, 100% {
-            opacity: 0.8;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.02);
-          }
-        }
-
-        .phone-bg-effect.active {
-          animation: cleanGlow 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        }
-
-        /* Page-wide particle animations - faster and smoother */
-        @keyframes floatPageParticle1 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.8); 
-            opacity: 0; 
-          }
-          10% { opacity: 0.6; }
-          50% { 
-            transform: translateY(-25px) translateX(12px) rotate(180deg) scale(1.2); 
-            opacity: 1; 
-          }
-          90% { opacity: 0.4; }
-        }
-
-        @keyframes floatPageParticle2 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.6); 
-            opacity: 0; 
-          }
-          15% { opacity: 0.8; }
-          50% { 
-            transform: translateY(-20px) translateX(-16px) rotate(-180deg) scale(1); 
-            opacity: 1; 
-          }
-          85% { opacity: 0.3; }
-        }
-
-        @keyframes floatPageParticle3 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.9); 
-            opacity: 0; 
-          }
-          20% { opacity: 0.7; }
-          50% { 
-            transform: translateY(-30px) translateX(20px) rotate(360deg) scale(1.3); 
-            opacity: 1; 
-          }
-          80% { opacity: 0.5; }
-        }
-
-        /* Smooth fade in/out for particles - faster */
-        .page-particles {
-          transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         /* Entrance Animations */
         .entrance-fade-up {
           opacity: 0;
@@ -186,206 +125,68 @@ const Section = ({ showContent }) => {
         .stagger-5 { transition-delay: 0.5s; }
       `}</style>
 
-      <div className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-16 py-8 relative overflow-hidden">
-        {/* Gradient Overlay */}
-        <div
-          className="absolute inset-0 z-0 opacity-60"
-          style={{
-            background: "radial-gradient(circle at 30% 50%, rgba(2, 151, 145, 0.15) 0%, rgba(0, 0, 0, 0) 50%)",
-          }}
-        />
+      {/* No background - inherits from body */}
+      <div className="min-h-screen text-white py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            {/* Text Section with reduced spacing */}
+            <div className="lg:w-1/2 space-y-6">
+              {/* Launching Soon Badge */}
+              <div
+                className={`inline-block text-white text-sm font-semibold py-3 px-6 rounded-full mb-6 uppercase badge-hover cursor-pointer entrance-bounce-in stagger-1 font-body ${showContent ? "animate" : ""}`}
+                style={{ backgroundColor: "#029791" }}
+              >
+                Launching Soon
+              </div>
 
-        <div
-          className="absolute inset-0 z-0 opacity-40"
-          style={{
-            background: "radial-gradient(circle at 70% 80%, rgba(2, 151, 145, 0.2) 0%, rgba(0, 0, 0, 0) 60%)",
-          }}
-        />
+              <h1
+                className={`text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-6 entrance-fade-up stagger-2 font-heading ${showContent ? "animate" : ""}`}
+              >
+                From to-do to done
+                <br />
+                <span className="highlight-fast" style={{ color: "#029791" }}>
+                  fast, local, trusted.
+                </span>
+              </h1>
 
-        {/* Page-wide floating particles */}
-        <div className={`page-particles ${isPhoneHovered ? "opacity-100" : "opacity-0"}`}>
-          {/* Top section particles */}
-          <div
-            className="fixed w-2 h-2 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "10%",
-              left: "15%",
-              animation: isPhoneHovered ? "floatPageParticle1 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-            }}
-          />
-          <div
-            className="fixed w-3 h-3 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "20%",
-              right: "20%",
-              animation: isPhoneHovered ? "floatPageParticle2 3s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.4s",
-            }}
-          />
-          <div
-            className="fixed w-1.5 h-1.5 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "15%",
-              left: "80%",
-              animation: isPhoneHovered ? "floatPageParticle3 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.8s",
-            }}
-          />
+              <p
+                className={`text-gray-300 max-w-lg text-xl leading-relaxed mb-8 entrance-fade-up stagger-3 font-body ${showContent ? "animate" : ""}`}
+              >
+                PickMyTask™ connects you with trusted people near you for all your task needs. From home cleaning to
+                grocery delivery, find help with just a few taps.
+              </p>
 
-          {/* Middle section particles */}
-          <div
-            className="fixed w-2.5 h-2.5 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "40%",
-              left: "10%",
-              animation: isPhoneHovered ? "floatPageParticle1 2.7s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.2s",
-            }}
-          />
-          <div
-            className="fixed w-1 h-1 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "50%",
-              right: "15%",
-              animation: isPhoneHovered ? "floatPageParticle2 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.6s",
-            }}
-          />
-          <div
-            className="fixed w-2 h-2 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "35%",
-              left: "25%",
-              animation: isPhoneHovered ? "floatPageParticle3 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "1s",
-            }}
-          />
+              {/* Join Waiting List Button */}
+              <div className={`mb-6 entrance-scale-up stagger-4 ${showContent ? "animate" : ""}`}>
+                <button
+                  className="inline-flex items-center text-white px-10 py-4 rounded-full hover:opacity-90 transition-all text-lg font-semibold btn-hover font-body"
+                  style={{ backgroundColor: "#029791" }}
+                >
+                  <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg>
+                  <span>Join Waiting List</span>
+                </button>
+              </div>
 
-          {/* Bottom section particles */}
-          <div
-            className="fixed w-3 h-3 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "70%",
-              left: "20%",
-              animation: isPhoneHovered ? "floatPageParticle1 2.3s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.5s",
-            }}
-          />
-          <div
-            className="fixed w-1.5 h-1.5 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "80%",
-              right: "25%",
-              animation: isPhoneHovered ? "floatPageParticle2 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "1.2s",
-            }}
-          />
-          <div
-            className="fixed w-2 h-2 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "75%",
-              left: "75%",
-              animation: isPhoneHovered ? "floatPageParticle3 3s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.1s",
-            }}
-          />
+              {/* Waiting List Count */}
+              <p
+                className={`text-gray-300 text-lg entrance-fade-up stagger-5 font-body ${showContent ? "animate" : ""}`}
+              >
+                <span className="font-bold" style={{ color: "#029791" }}>
+                  500+
+                </span>{" "}
+                people already on the waiting list
+              </p>
+            </div>
 
-          {/* Additional scattered particles */}
-          <div
-            className="fixed w-1 h-1 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "25%",
-              left: "60%",
-              animation: isPhoneHovered ? "floatPageParticle1 2.1s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.7s",
-            }}
-          />
-          <div
-            className="fixed w-2.5 h-2.5 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "60%",
-              left: "5%",
-              animation: isPhoneHovered ? "floatPageParticle2 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "0.9s",
-            }}
-          />
-          <div
-            className="fixed w-1.5 h-1.5 rounded-full pointer-events-none z-10"
-            style={{
-              backgroundColor: "#029791",
-              top: "45%",
-              right: "5%",
-              animation: isPhoneHovered ? "floatPageParticle3 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite" : "none",
-              animationDelay: "1.1s",
-            }}
-          />
-        </div>
-
-        {/* Text Section with entrance animations */}
-        <div className="mt-16 lg:w-1/2 relative z-20">
-          {/* Launching Soon Badge */}
-          <div
-            className={`inline-block text-white text-sm font-semibold py-2 px-4 rounded-full mb-6 uppercase badge-hover cursor-pointer entrance-bounce-in stagger-1 ${showContent ? "animate" : ""}`}
-            style={{ backgroundColor: "#029791" }}
-          >
-            Launching Soon
-          </div>
-
-          <h1
-            className={`text-6xl md:text-7xl font-bold leading-tight text-white entrance-fade-up stagger-2 ${showContent ? "animate" : ""}`}
-          >
-            From to-do to done
-            <br />
-            <span className="highlight-fast" style={{ color: "#029791" }}>
-              fast, local, trusted.
-            </span>
-          </h1>
-
-          <p
-            className={`mt-6 text-gray-300 max-w-lg text-lg entrance-fade-up stagger-3 ${showContent ? "animate" : ""}`}
-          >
-            PickMyTask™ connects you with trusted people near you for all your task needs. From home cleaning to grocery
-            delivery, find help with just a few taps.
-          </p>
-
-          {/* Join Waiting List Button */}
-          <div className={`mt-8 mb-6 entrance-scale-up stagger-4 ${showContent ? "animate" : ""}`}>
-            <button
-              className="inline-flex items-center text-white px-8 py-3 rounded-full hover:opacity-90 transition-all text-lg font-semibold btn-hover"
-              style={{ backgroundColor: "#029791" }}
+            {/* Phone Section with reduced spacing */}
+            <div
+              className={`lg:w-1/2 flex justify-center entrance-slide-right stagger-3 ${showContent ? "animate" : ""}`}
             >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-              </svg>
-              <span>Join Waiting List</span>
-            </button>
+              <PhoneMockup onHoverChange={setIsPhoneHovered} />
+            </div>
           </div>
-
-          {/* Waiting List Count */}
-          <p className={`text-gray-300 text-lg entrance-fade-up stagger-5 ${showContent ? "animate" : ""}`}>
-            <span className="font-bold" style={{ color: "#029791" }}>
-              500+
-            </span>{" "}
-            people already on the waiting list
-          </p>
-        </div>
-
-        {/* Phone Section with entrance animation */}
-        <div
-          className={`lg:w-1/2 mt-8 lg:mt-0 flex justify-center relative z-20 entrance-slide-right stagger-3 ${showContent ? "animate" : ""}`}
-        >
-          <PhoneMockup onHoverChange={setIsPhoneHovered} />
         </div>
       </div>
     </>
@@ -423,27 +224,6 @@ const PhoneMockup = ({ onHoverChange }) => {
 
   return (
     <div className="relative">
-      {/* Clean Glow Effect - No Shadows */}
-      <div
-        className="absolute"
-        style={{
-          width: "360px",
-          height: "700px",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
-          borderRadius: "3rem",
-          background: isHovered
-            ? "radial-gradient(ellipse 180px 350px at center, rgba(2, 151, 145, 0.15) 0%, rgba(2, 151, 145, 0.08) 40%, rgba(2, 151, 145, 0.02) 70%, transparent 100%)"
-            : "transparent",
-          opacity: isHovered ? 1 : 0,
-          transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-          zIndex: -1,
-          pointerEvents: "none",
-          filter: isHovered ? "blur(1px)" : "none",
-        }}
-      />
-
       <div
         className="relative mx-auto floating phone-interactive phone-glow"
         ref={phoneRef}
@@ -481,7 +261,7 @@ const PhoneMockup = ({ onHoverChange }) => {
 }
 
 const StatusBar = () => (
-  <div className="flex justify-between items-center px-6 py-3 bg-white text-black text-sm font-medium">
+  <div className="flex justify-between items-center px-6 py-3 bg-white text-black text-sm font-medium font-body">
     <div>10:19 AM</div>
     <div className="flex items-center space-x-1">
       <div className="flex space-x-1">
@@ -530,9 +310,9 @@ const AppHeader = () => (
         className="w-8 h-8 rounded-full mr-2 flex items-center justify-center"
         style={{ backgroundColor: "#029791" }}
       >
-        <span className="text-white font-bold text-sm">P</span>
+        <span className="text-white font-bold text-sm font-heading">P</span>
       </div>
-      <span className="font-semibold text-gray-800">PickMyTask™</span>
+      <span className="font-semibold text-gray-800 font-heading">PickMyTask™</span>
     </div>
     <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
   </div>
@@ -543,7 +323,7 @@ const SearchBar = () => (
     <svg className="w-4 h-4 mr-3 text-gray-500" viewBox="0 0 24 24" fill="currentColor">
       <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
     </svg>
-    <span className="text-gray-500 flex-1">Search any task...</span>
+    <span className="text-gray-500 flex-1 font-body">Search any task...</span>
     <button className="p-1">
       <svg className="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="currentColor">
         <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z" />
@@ -555,33 +335,33 @@ const SearchBar = () => (
 const TaskCard = ({ title, status, description, category, location, price }) => (
   <div className="bg-white rounded-xl p-4 mb-3 shadow-sm border border-gray-100">
     <div className="flex justify-between items-start mb-2">
-      <h3 className="font-semibold text-base text-gray-800 flex-1 pr-2">{title}</h3>
+      <h3 className="font-semibold text-base text-gray-800 flex-1 pr-2 font-heading">{title}</h3>
       <span
-        className="text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap"
+        className="text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap font-body"
         style={{ backgroundColor: "#029791", color: "white" }}
       >
         {status}
       </span>
     </div>
-    <p className="text-gray-600 mb-3 text-sm leading-relaxed">{description}</p>
+    <p className="text-gray-600 mb-3 text-sm leading-relaxed font-body">{description}</p>
     <div className="flex justify-between items-center mb-3 text-xs">
       <div className="flex items-center text-gray-500">
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
-        {category}
+        <span className="font-body">{category}</span>
       </div>
       <div className="flex items-center text-gray-500">
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
         </svg>
-        {location}
+        <span className="font-body">{location}</span>
       </div>
     </div>
     <div className="flex justify-between items-center">
-      <div className="text-lg font-bold text-gray-900">₹{price}</div>
+      <div className="text-lg font-bold text-gray-900 font-heading">₹{price}</div>
       <button
-        className="text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium transition-all"
+        className="text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium transition-all font-body"
         style={{ backgroundColor: "#029791" }}
       >
         Pick
@@ -666,13 +446,13 @@ const AppNavBar = () => (
         <svg className="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
         </svg>
-        <span className="text-xs text-gray-400">Home</span>
+        <span className="text-xs text-gray-400 font-body">Home</span>
       </button>
       <button className="flex flex-col items-center space-y-1">
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" style={{ color: "#029791" }}>
           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
         </svg>
-        <span className="text-xs font-medium" style={{ color: "#029791" }}>
+        <span className="text-xs font-medium font-body" style={{ color: "#029791" }}>
           Tasks
         </span>
       </button>
@@ -680,7 +460,7 @@ const AppNavBar = () => (
         <svg className="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
         </svg>
-        <span className="text-xs text-gray-400">Profile</span>
+        <span className="text-xs text-gray-400 font-body">Profile</span>
       </button>
     </div>
   </div>
