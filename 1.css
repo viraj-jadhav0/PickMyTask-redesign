@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define the gradient backgrounds directly */
+.bg-pickmytask-gradient {
+  background-color: linear-gradient(135deg, #000000 0%, #001a19 25%, #002e2c 50%, #003f3c 75%, #004a46 100%);
+  background-size: 200% 200%;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-pickmytask-gradient-animated {
+  /* background: linear-gradient(135deg, #000000 0%, #001a19 25%, #002e2c 50%, #003f3c 75%, #004a46 100%); */
+  background-color:#17273d;
+  background-size: 200% 200%;
+  /* animation: gradientAnimation 15s ease infinite; */
+}
